@@ -12,9 +12,7 @@ def main():
         rows = 16
         mole_x = 0
         mole_y = 0
-        hammer = pygame.image.load("hammer.png")
-        smaller_hammer = pygame.transform.scale(hammer, (25, 25))
-        pygame.mouse.set_visible(False)
+        
         running = True
         while running:
             for event in pygame.event.get():
@@ -28,8 +26,7 @@ def main():
                 pygame.draw.line(surface=screen, color="black", start_pos=(col * 32, 0), end_pos=(col * 32, 512))
             mole_rect = mole_image.get_rect(topleft=(mole_x, mole_y))
             screen.blit(mole_image, mole_rect)
-            hammer_pos = pygame.mouse.get_pos()
-            screen.blit(smaller_hammer, hammer_pos)
+          
             pos = pygame.mouse.get_pos()
             if pygame.mouse.get_pressed()[0] == 1:
                 if mole_rect.collidepoint(pos):
